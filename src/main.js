@@ -5,8 +5,7 @@ import Vue from 'vue'
 // import VueRouter from 'vue-router'
 // import axios from 'axios'
 import App from './App.vue'
-import './assets/bulma.css'
-import './assets/grid12.css'
+import './assets/bootstrap.css'
 
 /*
  * 使用 Vue 插件

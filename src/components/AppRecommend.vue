@@ -67,7 +67,5 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-  .col-xs-4{
-    // padding: 12px;
-  }
+
 </style>

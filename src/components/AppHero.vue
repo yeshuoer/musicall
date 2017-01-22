@@ -45,24 +45,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.hero-head{
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-  .level-item{
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    padding-right: 20px;
-  }
-  .musicButton{
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 20px;
-  }
-  @media screen and (max-width: 768px){
-    .musicButton{
-      justify-content: center;
-    }
-  }
-}
+
 </style>
