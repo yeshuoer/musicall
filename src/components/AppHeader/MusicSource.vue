@@ -1,9 +1,9 @@
 <template lang="html">
-  <div class="level-item">
-    <p>搜索源：</p>
-    <a class="netease button is-outline is-primary is-inverted">网易云音乐</a>
-    <a class="xiami button is-outline is-success is-inverted">虾米音乐</a>
-    <a class="qq button is-outline is-danger is-inverted">QQ音乐</a>
+  <div class="">
+    <span>搜索源：</span>
+    <span class="netease label label-danger">网易云</span>
+    <span class="xiami label label-warning">虾米</span>
+    <span class="qq label label-success">QQ</span>
   </div>
 </template>
 
@@ -14,7 +14,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .level-item{
-    height: 100%;
-  }
 </style>

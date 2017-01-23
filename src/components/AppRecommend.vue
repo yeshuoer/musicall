@@ -1,65 +1,96 @@
 <template lang="html">
-<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-4 col-sm-3">
-      <div class="card">
-      <div class="card-image">
-        <figure class="image is-square">
-          <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
-        </figure>
-      </div>
-      <div class="card-content">
-        <h1>hehe</h1>
-      </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
     </div>
-    <div class="col-xs-4 col-sm-3">
-      <div class="card">
-      <div class="card-image">
-        <figure class="image is-square">
-          <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
-        </figure>
-      </div>
-      <div class="card-content">
-        <h1>hehe</h1>
-      </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
     </div>
-    <div class="col-xs-4 col-sm-3">
-      <div class="card">
-      <div class="card-image">
-        <figure class="image is-square">
-          <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
-        </figure>
-      </div>
-      <div class="card-content">
-        <h1>hehe</h1>
-      </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
     </div>
-    <div class="col-xs-4 col-sm-3">
-      <div class="card">
-      <div class="card-image">
-        <figure class="image is-square">
-          <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
-        </figure>
-      </div>
-      <div class="card-content">
-        <h1>hehe</h1>
-      </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
     </div>
-    <div class="col-xs-4 col-sm-3">
-      <div class="card">
-      <div class="card-image">
-        <figure class="image is-square">
-          <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
-        </figure>
-      </div>
-      <div class="card-content">
-        <h1>hehe</h1>
-      </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
     </div>
-  </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <a href="#" class="thumbnail">
+        <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
+        <div class="caption">
+          <h3 class="text-center">Thumbnail label</h3>
+        </div>
+      </a>
+
+    </div>
 </div>
-
-
 </template>
 
 <script>
@@ -67,5 +98,8 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-
+  .row{
+    padding: 2%;
+    background-color: lightgreen;
+  }
 </style>
