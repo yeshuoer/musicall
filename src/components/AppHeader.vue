@@ -1,16 +1,12 @@
 <template lang="html">
-    <div class="parent row">
+    <div class="row">
       <!-- 左侧音乐按钮 -->
-      <div class="musicButton col-xs-12 col-sm-1">
+      <div class="musicButton col-xs-4 col-sm-1 col-xs-offset-4 col-sm-offset-0">
         <MusicButton></MusicButton>
       </div>
       <!-- 搜索功能 -->
-      <div class="searchForm col-xs-12 col-sm-6 col-sm-offset-1">
+      <div class="searchForm col-xs-12 col-sm-11">
         <SearchForm></SearchForm>
-      </div>
-      <!-- 音乐来源 -->
-      <div class="musicSource col-xs-12 col-sm-4">
-        <MusicSource></MusicSource>
       </div>
     </div>
  </template>
@@ -18,30 +14,18 @@
 <script>
 import MusicButton from './AppHeader/MusicButton.vue'
 import SearchForm from './AppHeader/SearchForm.vue'
-import MusicSource from './AppHeader/MusicSource.vue'
 
 export default {
   components: {
     MusicButton,
-    SearchForm,
-    MusicSource
+    SearchForm
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .parent{
-    background-color: lightgreen;
-    height: 80px;
-    .musicButton{
-      margin-top: 10px;
-    }
-    .searchForm{
-      margin-top: 23px;
-    }
-    .musicSource{
-      padding: 15px 0;
-      margin-top: 14px;
-    }
-  }
+.searchForm{
+  margin-top: 13px;
+  margin-bottom: 18px;
+}
 </style>

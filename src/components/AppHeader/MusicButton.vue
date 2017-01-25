@@ -11,11 +11,11 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-.musicIcon{
-  padding-left: 20px;
+.musicButton{
+  margin: 0 auto;
 }
   .glyphicon{
     font-size: 3em;
-    color: white;
+    // color: white;
   }
 </style>

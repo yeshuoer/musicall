@@ -1,19 +1,18 @@
 <template lang="html">
     <div class="row">
       <!-- 选择内容下拉框 -->
-      <div class="col-sm-4 col-md-3 col-lg-2">
-        <select class="form-control">
-          <option>Song</option>
-          <option>Album</option>
-          <option>PlayList</option>
+      <div class="section1 col-xs-4">
+        <select class="form-control pull-right" name="">
+          <option value="song">歌曲</option>
+          <option value="album">专辑</option>
+          <option value="sheet">歌单</option>
         </select>
       </div>
 
-      <div class="col-sm-8">
+      <!-- 搜索框 -->
+      <div class="section2 col-xs-6">
         <div class="input-group">
-          <!-- 搜索框 -->
           <input class="form-control" type="text" placeholder="请输入搜索内容">
-          <!-- 搜索按钮 -->
           <span class="input-group-btn">
             <button class="btn">搜索</button>
           </span>
@@ -27,5 +26,10 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-
+select{
+  width: 80px;
+}
+.input-group{
+  width: 220px;
+}
 </style>
