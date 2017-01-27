@@ -3,7 +3,7 @@
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import axios from 'axios'
+import store from './store/index.js'
 import App from './App.vue'
 import AppRecommend from './components/AppRecommend.vue'
 import SearchResult from './components/SearchResult.vue'
@@ -40,5 +40,6 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })

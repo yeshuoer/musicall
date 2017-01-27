@@ -1,15 +1,21 @@
 <template lang="html">
   <div class="">
-    <SearchSong></SearchSong>
+    <AlbumResult></AlbumResult>
+    <SongResult></SongResult>
+    <!-- <SheetResult></SheetResult> -->
   </div>
 </template>
 
 <script>
-import SearchSong from './SearchResult/SearchSong.vue'
+import SongResult from './SearchResult/SongResult.vue'
+import AlbumResult from './SearchResult/AlbumResult.vue'
+// import SheetResult from './SearchResult/SheetResult.vue'
 
 export default {
   components: {
-    SearchSong
+    SongResult,
+    // SheetResult,
+    AlbumResult
   }
 }
 </script>
