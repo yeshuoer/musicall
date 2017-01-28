@@ -2,40 +2,78 @@ import * as type from '../mutation-types'
 import axios from 'axios'
 
 const state = {
-  sheetResult: {
-    netease: {
-      sheetList: null
-    },
-    xiami: {
-      sheetList: null
-    },
-    qq: {
-      sheetList: null
-    }
+  keyword:'',
+  neteaseSheetResult: {
+    playlists: null
+  },
+  xiamiSheetResult: {
+    playlists: null
+  },
+  qqSheetResult: {
+    playlists: null
   }
 }
 
 const getters = {
-  neteaseSheets: state => state.sheetResult.netease.sheetList,
-  xiamiSheets: state => state.sheetResult.xiami.sheetList,
-  qqSheets: state => state.sheetResult.qq.sheetList
+  neteaseSheets: state => state.neteaseSheetResult.playlists,
+  xiamiSheets: state => state.xiamiSheetResult.playlists,
+  qqSheets: state => state.qqSheetResult.playlists
 }
 
 const actions = {
   getSheets({
     commit
   }, searchkey) {
-    axios.get(`http://musicall.leanapp.cn/api/searchsheet/all?key=${searchkey}&page=1`)
+    commit(type.KEYWORD, searchkey)
+    axios.get(`http://musicall.leanapp.cn/api/searchsheet/netease?key=${searchkey}&page=1`)
       .then(res => {
-        commit(type.GET_SHEETS, res.data)
+        commit(type.GET_NETEASE_SHEETS, res.data)
       })
       .catch(err => console.log(err))
-  }
+    axios.get(`http://musicall.leanapp.cn/api/searchsheet/xiami?key=${searchkey}&page=1`)
+      .then(res => {
+        commit(type.GET_XIAMI_SHEETS, res.data)
+      })
+      .catch(err => console.log(err))
+    axios.get(`http://musicall.leanapp.cn/api/searchsheet/qq?key=${searchkey}&page=1`)
+      .then(res => {
+        commit(type.GET_QQ_SHEETS, res.data)
+      })
+      .catch(err => console.log(err))
+  },
+  changeSheetPage({
+    commit
+  }, to) {
+    axios.get(`http://musicall.leanapp.cn/api/searchsheet/${to.source}?key=${to.key}&page=${to.page}`)
+      .then(res => {
+        switch (to.source) {
+          case 'netease':
+            commit(type.GET_NETEASE_SHEETS, res.data)
+            break;
+          case 'xiami':
+            commit(type.GET_XIAMI_SHEETS, res.data)
+            break;
+          case 'qq':
+            commit(type.GET_QQ_SHEETS, res.data)
+            break;
+        }
+      })
+      .catch(err => console.log(err))
+  },
 }
 
 const mutations = {
-  [type.GET_SHEETS](state, payload) {
-    state.sheetResult = payload
+  [type.GET_NETEASE_SHEETS](state, payload) {
+    state.neteaseSheetResult = payload
+  },
+  [type.GET_XIAMI_SHEETS](state, payload) {
+    state.xiamiSheetResult = payload
+  },
+  [type.GET_QQ_SHEETS](state, payload) {
+    state.qqSheetResult = payload
+  },
+  [type.KEYWORD](state, payload) {
+    state.keyword = payload
   }
 }
 

@@ -35,12 +35,15 @@ export default {
       if (this.searchType === 'searchsong') {
         // 搜索歌曲
         this.$store.dispatch('getSongs', this.searchKey)
+        this.$router.push('/result/songs')
       } else if (this.searchType === 'searchalbum') {
         // 搜索专辑
         this.$store.dispatch('getAlbums',this.searchKey)
+        this.$router.push('/result/albums')
       } else if (this.searchType === 'searchsheet') {
         // 搜索歌单
         this.$store.dispatch('getSheets',this.searchKey)
+        this.$router.push('/result/sheets')
       }
     }
   }

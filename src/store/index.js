@@ -8,8 +8,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    songresult,
-    albumresult,
-    sheetresult
+    song:songresult,
+    album:albumresult,
+    sheet:sheetresult
   }
 })

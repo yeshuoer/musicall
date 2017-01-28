@@ -7,6 +7,11 @@ import store from './store/index.js'
 import App from './App.vue'
 import AppRecommend from './components/AppRecommend.vue'
 import SearchResult from './components/SearchResult.vue'
+import SongResult from './components/SearchResult/SongResult.vue'
+import AlbumResult from './components/SearchResult/AlbumResult.vue'
+import SheetResult from './components/SearchResult/SheetResult.vue'
+import AlbumDetail from './components/SearchResult/AlbumDetail.vue'
+import SheetDetail from './components/SearchResult/SheetDetail.vue'
 
 import './assets/bootstrap.css'
 
@@ -15,10 +20,9 @@ import './assets/bootstrap.css'
  */
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path:'/',
-    component:AppRecommend
+const routes = [{
+    path: '/',
+    component: AppRecommend
   },
   {
     path: '/recommend',
@@ -26,14 +30,29 @@ const routes = [
   },
   {
     path: '/result',
-    component: SearchResult
+    component: SearchResult,
+    children: [{
+      path: 'songs',
+      component: SongResult
+    }, {
+      path: 'albums',
+      component: AlbumResult
+    }, {
+      path: 'sheets',
+      component: SheetResult
+    }, {
+      path: 'albumdetail',
+      component: AlbumDetail
+    }, {
+      path: 'sheetdetail',
+      component: SheetDetail
+    }]
   }
 ]
 
 const router = new VueRouter({
   routes
 })
-
 
 
 /* eslint-disable no-new */
