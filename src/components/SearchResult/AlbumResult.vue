@@ -7,13 +7,13 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="album in neteaseAlbums">
-            <router-link to="albumdetail" @click="albumDetail('netease',album.id)" class="thumbnail">
+            <a  @click="albumDetail('netease',album.id)" class="thumbnail">
               <img :src="album.cover">
               <div class="caption">
                 <p class="text-center">{{album.name}}</p>
                 <p class="text-center">{{album.artist.name}}</p>
               </div>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>
@@ -31,13 +31,13 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="album in xiamiAlbums">
-            <router-link to="albumdetail" @click="albumDetail('xiami',album.id)" class="thumbnail">
+            <a  @click="albumDetail('xiami',album.id)" class="thumbnail">
               <img :src="album.cover">
               <div class="caption">
                 <p class="text-center">{{album.name}}</p>
                 <p class="text-center">{{album.artist.name}}</p>
               </div>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>
@@ -55,13 +55,13 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="album in qqAlbums">
-            <router-link to="albumdetail" @click="albumDetail('qq',album.id)" class="thumbnail">
+            <a  @click="albumDetail('qq',album.id)" class="thumbnail">
               <img :src="album.cover">
               <div class="caption">
                 <p class="text-center">{{album.name}}</p>
                 <p class="text-center">{{album.artist.name}}</p>
               </div>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>
@@ -159,10 +159,11 @@ export default {
           break;
       }
     },
-    albumDetail(type, id) {
+    albumDetail(source, id) {
+      this.$router.push('/result/albumdetail')
       this.$store.dispatch('albumdetail', {
-        type,
-        id
+        source: source,
+        id: id
       })
     }
   }

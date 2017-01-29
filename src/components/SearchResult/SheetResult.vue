@@ -7,7 +7,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="sheet in neteaseSheets">
-            <a href="#" class="thumbnail">
+            <a @click="sheetDetail('netease',sheet.id)" class="thumbnail">
               <img :src="sheet.cover">
               <div class="caption">
                 <p class="text-center">{{sheet.name}}</p>
@@ -31,7 +31,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="sheet in xiamiSheets">
-            <a href="#" class="thumbnail">
+            <a @click="sheetDetail('xiami',sheet.id)" class="thumbnail">
               <img :src="sheet.cover">
               <div class="caption">
                 <p class="text-center">{{sheet.name}}</p>
@@ -55,7 +55,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="sheet in qqSheets">
-            <a href="#" class="thumbnail">
+            <a @click="sheetDetail('qq',sheet.id)" class="thumbnail">
               <img :src="sheet.cover">
               <div class="caption">
                 <p class="text-center">{{sheet.name}}</p>
@@ -158,6 +158,13 @@ export default {
           })
           break;
       }
+    },
+    sheetDetail(source, id) {
+      this.$router.push('/result/sheetdetail')
+      this.$store.dispatch('sheetdetail', {
+        source: source,
+        id: id
+      })
     }
   }
 }
