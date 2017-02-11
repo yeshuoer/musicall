@@ -1,23 +1,19 @@
 <template lang="html">
-    <div class="row">
+    <div class="search-form center-block">
       <!-- 选择内容下拉框 -->
-      <div class="section1 col-xs-4">
-        <select class="form-control pull-right" v-model="searchType" name="">
-          <option value="searchsong">歌曲</option>
-          <option value="searchalbum">专辑</option>
-          <option value="searchsheet">歌单</option>
-        </select>
+      <select class="form-control pull-left" v-model="searchType" name="">
+        <option value="searchsong">歌曲</option>
+        <option value="searchalbum">专辑</option>
+        <option value="searchsheet">歌单</option>
+      </select>
+      <!-- 搜索框 -->
+      <div class="input-group pull-right">
+        <input class="form-control" type="text" v-model="searchKey" placeholder="请输入搜索内容">
+        <span class="input-group-btn">
+          <button class="btn" @click="search">搜索</button>
+        </span>
       </div>
 
-      <!-- 搜索框 -->
-      <div class="section2 col-xs-6">
-        <div class="input-group">
-          <input class="form-control" type="text" v-model="searchKey" placeholder="请输入搜索内容">
-          <span class="input-group-btn">
-            <button class="btn" @click="search">搜索</button>
-          </span>
-        </div>
-      </div>
     </div>
 </template>
 
@@ -51,10 +47,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.search-form{
+  width: 300px;
+  padding-bottom: 50px;
+}
 select {
     width: 80px;
 }
 .input-group {
-    width: 220px;
+    width: 200px;
 }
 </style>

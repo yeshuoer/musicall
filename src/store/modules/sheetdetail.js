@@ -19,7 +19,6 @@ const actions = {
   }, to) {
     axios.get(`http://musicall.leanapp.cn/api/getasheet/${to.source}?id=${to.id}`)
       .then(res => {
-        console.log(res.data)
         commit(type.sheet_detail, res.data)
         commit(type.SHEET_SOURCE, to.source)
       })

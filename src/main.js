@@ -1,5 +1,5 @@
 /*
- * 引入 Vue 全家桶
+ * 引入 Vue 全家桶及组件
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -20,17 +20,21 @@ import './assets/bootstrap.css'
  */
 Vue.use(VueRouter)
 
+// 路由设置
 const routes = [{
     path: '/',
     component: AppRecommend
   },
+  // 首页为曲目推荐
   {
     path: '/recommend',
     component: AppRecommend
   },
+  // 搜索结果页面
   {
     path: '/result',
     component: SearchResult,
+    // 搜索页展示
     children: [{
       path: 'songs',
       component: SongResult
@@ -53,7 +57,6 @@ const routes = [{
 const router = new VueRouter({
   routes
 })
-
 
 /* eslint-disable no-new */
 new Vue({

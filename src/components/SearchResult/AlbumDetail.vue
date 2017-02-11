@@ -13,7 +13,7 @@
           <p>音乐人：{{artist}}</p>
         </div>
       </div>
-      <table class="table">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th>歌曲</th>
@@ -28,7 +28,9 @@
             <td>{{albumname}}</td>
             <td>{{song.artists[0].name}}</td>
             <td>{{song.needPay?'收费':'免费'}}</td>
-            <td></td>
+            <td>
+              <span @click="plusSong(song.name,song.id)" class="glyphicon glyphicon-plus"></span>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -42,8 +44,13 @@ import {
 } from 'vuex'
 
 export default {
+  data() {
+    return {
+      albumSource: this.$store.state.albumdetail.source
+    }
+  },
   computed: {
-    artist(){
+    artist() {
       return this.$store.state.albumdetail.album_detail.artist.name
     },
     cover() {
@@ -68,19 +75,29 @@ export default {
           break;
       }
     }
+  },
+  methods: {
+    plusSong(name, id) {
+      this.$store.dispatch('plussong', {
+        source: this.albumSource,
+        name,
+        id
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.media{
-  padding-bottom: 40px;
-  img{
-    width: 200px;
-    width: 200px;
-  }
-  h4,p{
-    padding: 10px;
-  }
+.media {
+    padding-bottom: 40px;
+    img {
+        width: 200px;
+        width: 200px;
+    }
+    h4,
+    p {
+        padding: 10px;
+    }
 }
 </style>

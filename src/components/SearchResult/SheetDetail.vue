@@ -13,7 +13,7 @@
           <p>创建者：{{author}}</p>
         </div>
       </div>
-      <table class="table">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th>歌曲</th>
@@ -28,7 +28,9 @@
             <td>{{sheetname}}</td>
             <td>{{song.artists[0].name}}</td>
             <td>{{song.needPay?'收费':'免费'}}</td>
-            <td></td>
+            <td>
+              <span @click="plusSong(song.name,song.id)" class="glyphicon glyphicon-plus"></span>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -42,8 +44,13 @@ import {
 } from 'vuex'
 
 export default {
+  data() {
+    return {
+      sheetSource: this.$store.state.sheetdetail.source
+    }
+  },
   computed: {
-    author(){
+    author() {
       return this.$store.state.sheetdetail.sheet_detail.author.name
     },
     cover() {
@@ -70,22 +77,27 @@ export default {
     }
   },
   methods: {
-    test() {
-      console.log(this.$store.state.sheetdetail.sheet_detail.name)
+    plusSong(name, id) {
+      this.$store.dispatch('plussong', {
+        source: this.sheetSource,
+        name,
+        id
+      })
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.media{
-  padding-bottom: 40px;
-  img{
-    width: 200px;
-    height: 200px;
-  }
-  h4,p{
-    padding: 10px;
-  }
+.media {
+    padding-bottom: 40px;
+    img {
+        width: 200px;
+        height: 200px;
+    }
+    h4,
+    p {
+        padding: 10px;
+    }
 }
 </style>

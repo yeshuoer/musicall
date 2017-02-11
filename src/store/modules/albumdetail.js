@@ -19,7 +19,6 @@ const actions = {
   }, to) {
     axios.get(`http://musicall.leanapp.cn/api/getalbum/${to.source}?id=${to.id}`)
       .then(res => {
-        console.log(res.data)
         commit(type.ALBUM_DETAIL, res.data)
         commit(type.ALBUM_SOURCE, to.source)
       })
