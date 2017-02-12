@@ -1,12 +1,12 @@
 <template lang="html">
   <div class="playlist">
-    <!-- <button type="button" name="button">
+    <button type="button" name="button">
       <span @click="playSong" class="glyphicon glyphicon-play"></span>
     </button>
     <button type="button" name="button">
       <span @click="pauseSong" class="glyphicon glyphicon-pause"></span>
     </button>
-    <button type="button" @click="next" name="button">下一首</button> -->
+    <button type="button" @click="next" name="button">下一首</button>
     <div class="triangle-up"></div>
     <table class="table">
       <thead>
@@ -111,8 +111,15 @@ export default {
       }
     },
     removeSong(song) {
-      let i = this.list.indexOf(song)
-      this.list.splice(i, 1)
+      for (var i = 0; i < this.list.length; i++) {
+        if (this.list[i].isplaying) {
+          this.list[i].isplaying = false
+          this.list[i].sound.stop()
+          break
+        }
+      }
+      let k = this.list.indexOf(song)
+      this.list.splice(k, 1)
     }
   }
 }

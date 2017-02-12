@@ -27,8 +27,8 @@
     <!-- 翻页 -->
     <div class="text-center">
       <ul class="pager">
-        <li @click="prePage(1)"><a><span class="glyphicon glyphicon-arrow-left"></span> 上一页</a></li>
-        <li @click="nextPage(1)"><a>下一页 <span class="glyphicon glyphicon-arrow-right"></span></a></li>
+        <li @click="prePage(1)"><a :style="{color:color}"><span class="glyphicon glyphicon-arrow-left"></span> 上一页</a></li>
+        <li @click="nextPage(1)"><a :style="{color:color}">下一页 <span class="glyphicon glyphicon-arrow-right"></span></a></li>
       </ul>
     </div>
   </div>
@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  props: ['source'],
+  props: ['source', 'color'],
   data() {
     return {
       page: 1
@@ -97,9 +97,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sub-song-result{
-  background-color: lightblue;
-}
 .pager {
     margin-top: 0;
     padding-top: 0;

@@ -2,7 +2,7 @@
   <div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        QQ 音乐
+        音乐推荐
       </div>
       <div class="panel-body">
         <div class="row">
@@ -14,70 +14,7 @@
               </div>
             </a>
           </div>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="thumbnail">
-              <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
-              <div class="caption">
-                <p class="text-center">Thumbnail label</p>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="thumbnail">
-              <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
-              <div class="caption">
-                <p class="text-center">Thumbnail label</p>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="thumbnail">
-              <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
-              <div class="caption">
-                <p class="text-center">Thumbnail label</p>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="thumbnail">
-              <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
-              <div class="caption">
-                <p class="text-center">过而成或恶如恒维尔说刚欧威尔H股</p>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="thumbnail">
-              <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
-              <div class="caption">
-                <p class="text-center">Thumbnail label</p>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="thumbnail">
-              <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
-              <div class="caption">
-                <p class="text-center">Thumbnail label</p>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="thumbnail">
-              <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
-              <div class="caption">
-                <p class="text-center">过而成或恶如恒维尔说刚欧威尔H股</p>
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="thumbnail">
-              <img src="https://p.qpic.cn/music_cover/J95ocQUib6X9I7CKCVE9Qib4n5hUOWqgEByseocwtAXEiaZZwu2TxPTDA/600" alt="...">
-              <div class="caption">
-                <p class="text-center">Thumbnail label</p>
-              </div>
-            </a>
-          </div>
+          <Item></Item>
         </div>
       </div>
       <div class="text-center">
@@ -91,13 +28,19 @@
 </template>
 
 <script>
-export default {}
+import Item from './AppRecommend/Item.vue'
+
+export default {
+  components: {
+    Item
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-.pager{
-  padding-top: 0;
-  margin-top: 0;
+.pager {
+    padding-top: 0;
+    margin-top: 0;
 }
 p.text-center {
     white-space: nowrap;

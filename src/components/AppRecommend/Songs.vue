@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="panel panel-default">
-    <div class="panel-heading" :style="{backgroundColor:sourceColor}">
-      <span>{{source}}</span>
+    <div class="panel-heading">
+      <span>音乐推荐</span>
     </div>
-    <div class="panel-body" :style="{color:sourceColor}">
+    <div class="panel-body">
       <div class="media">
         <div class="media-left">
           <img class="media-object" :src="cover">
@@ -61,32 +61,6 @@ export default {
     },
     songs() {
       return this.$store.state.albumdetail.album_detail.songList
-    },
-    source() {
-      switch (this.$store.state.albumdetail.source) {
-        case 'netease':
-          return '网易云音乐'
-          break;
-        case 'xiami':
-          return '虾米音乐'
-          break;
-        case 'qq':
-          return 'QQ 音乐'
-          break;
-      }
-    },
-    sourceColor() {
-      switch (this.$store.state.albumdetail.source) {
-        case 'netease':
-          return 'crimson'
-          break;
-        case 'xiami':
-          return 'darkorange'
-          break;
-        case 'qq':
-          return 'mediumseagreen'
-          break;
-      }
     }
   },
   methods: {

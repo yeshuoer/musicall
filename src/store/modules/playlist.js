@@ -23,7 +23,7 @@ const actions = {
 
 const mutations = {
   [type.PLUS_SONG](state, payload) {
-    payload.isplaying=false
+    payload.isplaying = false
     state.play_list.push(payload)
   }
 }

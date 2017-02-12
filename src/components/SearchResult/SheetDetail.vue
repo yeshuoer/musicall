@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="panel panel-default">
-    <div class="panel-heading">
-      {{source}}
+    <div class="panel-heading" :style="{backgroundColor:sourceColor}">
+      <span>{{source}}</span>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" :style="{color:sourceColor}">
       <div class="media">
         <div class="media-left">
           <img class="media-object" :src="cover">
@@ -74,6 +74,19 @@ export default {
           return 'QQ 音乐'
           break;
       }
+    },
+    sourceColor() {
+      switch (this.$store.state.sheetdetail.source) {
+        case 'netease':
+          return 'crimson'
+          break;
+        case 'xiami':
+          return 'darkorange'
+          break;
+        case 'qq':
+          return 'mediumseagreen'
+          break;
+      }
     }
   },
   methods: {
@@ -89,6 +102,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.panel-heading {
+    span{
+      color: white;
+    }
+}
 .media {
     padding-bottom: 40px;
     img {

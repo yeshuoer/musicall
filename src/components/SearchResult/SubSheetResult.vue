@@ -5,7 +5,7 @@
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="sheet in sourceSheets">
           <a @click="sheetDetail(sheet.id)" class="thumbnail">
             <img :src="sheet.cover">
-            <div class="caption">
+            <div class="caption" :style="{color:color}">
               <p class="text-center">{{sheet.name}}</p>
               <p class="text-center">{{sheet.author.name}}</p>
             </div>
@@ -15,8 +15,8 @@
     </div>
     <div class="text-center">
       <ul class="pager">
-       <li @click="prePage()"><a><span class="glyphicon glyphicon-arrow-left"></span> 上一页</a></li>
-       <li @click="nextPage()"><a>下一页 <span class="glyphicon glyphicon-arrow-right"></span></a></li>
+       <li @click="prePage()"><a :style="{color:color}"><span class="glyphicon glyphicon-arrow-left"></span> 上一页</a></li>
+       <li @click="nextPage()"><a :style="{color:color}">下一页 <span class="glyphicon glyphicon-arrow-right"></span></a></li>
      </ul>
     </div>
   </div>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  props: ['source'],
+  props: ['source','color'],
   data() {
     return {
       page: 1

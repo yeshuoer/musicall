@@ -1,14 +1,14 @@
 <template lang="html">
-  <div class="">
+  <div>
     <div class="panel panel-default" :style="{color:currentColor}">
-      <div class="panel-heading">
+      <div class="panel-heading" :style="{backgroundColor:currentColor}">
         <a class="btn" @click="showNetease">网易云音乐</a>
         <a class="btn" @click="showXiami">虾米音乐</a>
         <a class="btn" @click="showQQ">QQ 音乐</a>
       </div>
-      <SubSongResult v-show="neteaseShow" source="netease"></SubSongResult>
-      <SubSongResult v-show="xiamiShow" source="xiami"></SubSongResult>
-      <SubSongResult v-show="qqShow" source="qq"></SubSongResult>
+      <SubSongResult v-show="neteaseShow" source="netease" :color="currentColor"></SubSongResult>
+      <SubSongResult v-show="xiamiShow" source="xiami" :color="currentColor"></SubSongResult>
+      <SubSongResult v-show="qqShow" source="qq" :color="currentColor"></SubSongResult>
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ import SubSongResult from './SubSongResult.vue'
 export default {
   data() {
     return {
-      currentColor: '#c10d0c',
+      currentColor: 'crimson',
       neteaseShow: true,
       xiamiShow: false,
       qqShow: false
@@ -33,25 +33,30 @@ export default {
       this.neteaseShow = true
       this.xiamiShow = false
       this.qqShow = false
-      this.currentColor = '#c10d0c'
+      this.currentColor = 'crimson'
     },
     showXiami() {
       this.xiamiShow = true
       this.neteaseShow = false
       this.qqShow = false
-      this.currentColor = '#cc5a18'
+      this.currentColor = 'darkorange'
     },
     showQQ() {
       this.qqShow = true
       this.neteaseShow = false
       this.xiamiShow = false
-      this.currentColor = '#31c27c'
+      this.currentColor = 'mediumseagreen'
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.panel-heading{
+  a{
+    color: white;
+  }
+}
 .pager {
     margin-top: 0;
     padding-top: 0;

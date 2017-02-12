@@ -1,11 +1,11 @@
 <template lang="html">
-  <div class="">
+  <div class="sub-album-result">
     <div class="panel-body">
       <div class="row">
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="album in sourceAlbums">
           <a @click="albumDetail(album.id)" class="thumbnail">
             <img :src="album.cover">
-            <div class="caption">
+            <div class="caption" :style="{color:color}">
               <p class="text-center">{{album.name}}</p>
               <p class="text-center">{{album.artist.name}}</p>
             </div>
@@ -15,8 +15,8 @@
     </div>
     <div class="text-center">
       <ul class="pager">
-       <li @click="prePage()"><a><span class="glyphicon glyphicon-arrow-left"></span> 上一页</a></li>
-       <li @click="nextPage()"><a>下一页 <span class="glyphicon glyphicon-arrow-right"></span></a></li>
+       <li @click="prePage()"><a :style="{color:color}"><span class="glyphicon glyphicon-arrow-left"></span> 上一页</a></li>
+       <li @click="nextPage()"><a :style="{color:color}">下一页 <span class="glyphicon glyphicon-arrow-right"></span></a></li>
      </ul>
     </div>
   </div>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  props: ['source'],
+  props: ['source','color'],
   data() {
     return {
       page: 1
