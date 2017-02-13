@@ -1,13 +1,15 @@
 <template lang="html">
   <div class="playlist">
-    <button type="button" name="button">
-      <span @click="playSong" class="glyphicon glyphicon-play"></span>
-    </button>
-    <button type="button" name="button">
-      <span @click="pauseSong" class="glyphicon glyphicon-pause"></span>
-    </button>
-    <button type="button" @click="next" name="button">下一首</button>
     <div class="triangle-up"></div>
+    <div class="buttons">
+      <a class="btn">
+        <span @click="playSong" class="glyphicon glyphicon-play"></span>
+      </a>
+      <a class="btn">
+        <span @click="pauseSong" class="glyphicon glyphicon-pause"></span>
+      </a>
+      <a class="btn" @click="next">下一首</a>
+    </div>
     <table class="table">
       <thead>
         <tr>
@@ -18,12 +20,12 @@
       </thead>
       <tbody>
         <tr v-for="song in list" >
-          <td><span v-if="song.isplaying" class="glyphicon glyphicon-music"></span></td>
+          <td><span v-if="song.isplaying" class="glyphicon glyphicon-volume-up"></span></td>
           <td @click="playSelf(song)"><span class="song-name">{{song.name}}</span></td>
           <td>
-            <button type="button" @click='removeSong(song)' name="button">
+            <a @click='removeSong(song)' class="btn">
               <span class="glyphicon glyphicon-remove"></span>
-            </button>
+            </a>
           </td>
         </tr>
       </tbody>
@@ -133,12 +135,32 @@ export default {
     z-index: 2;
     width: 96%;
     .table {
-        background-color: lightblue;
+        background-color: salmon;
+        color: white;
+        td {
+            vertical-align: baseline;
+        }
+        a.btn {
+            color: white;
+            &:hover {
+                color: pink;
+            }
+        }
+    }
+}
+.buttons {
+    background-color: salmon;
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    a {
+        background-color: white;
+        color: salmon;
     }
 }
 .song-name:hover {
     cursor: pointer;
-    color: lightgreen;
+    color: pink;
 }
 .triangle-up {
     margin-left: 20px;
@@ -146,6 +168,6 @@ export default {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 20px solid lightblue;
+    border-bottom: 20px solid salmon;
 }
 </style>

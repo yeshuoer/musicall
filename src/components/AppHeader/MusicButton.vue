@@ -1,12 +1,19 @@
 <template lang="html">
-  <div class="musicIcon">
-    <a v-if="showPlayList" @click="toogleShowPlayList" class="btn">
-      <span class="glyphicon glyphicon-music"></span>
-    </a>
-    <a v-else @click="toogleShowPlayList" class="btn">
-      <span class="glyphicon glyphicon-list"></span>
-    </a>
-    <span>播放列表</span>
+  <div class="music-button">
+    <div class="musicIcon">
+      <a v-if="showPlayList" @click="toogleShowPlayList" class="btn">
+        <span class="glyphicon glyphicon-music"></span>
+      </a>
+      <a v-else @click="toogleShowPlayList" class="btn">
+        <span class="glyphicon glyphicon-list"></span>
+      </a>
+      <span>播放列表</span>
+    </div>
+    <div class="musicIcon">
+      <a @click="toRecommend" class="btn">
+        <span class="glyphicon glyphicon-home"></span>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -23,17 +30,24 @@ export default {
     toogleShowPlayList() {
       this.showPlayList = !this.showPlayList
       this.$store.state.showPlayList = !this.$store.state.showPlayList
+    },
+    toRecommend(){
+      this.$router.push('/recommend')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.musicButton {
-    margin: 0 auto;
+.music-button{
+  display: flex;
+  justify-content: space-between;
+}
+.musicIcon>span{
+  color: salmon;
 }
 .glyphicon {
     font-size: 3em;
-    // color: white;
+    color: salmon;
 }
 </style>

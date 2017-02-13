@@ -2,7 +2,8 @@ import * as type from '../mutation-types'
 import axios from 'axios'
 
 const state = {
-  keyword:'',
+  loading: false,
+  keyword: '',
   neteaseAlbumResult: {
     albumList: null
   },
@@ -24,12 +25,17 @@ const actions = {
   getAlbums({
     commit
   }, searchkey) {
+    state.loading = true
     commit(type.KEYWORD, searchkey)
     axios.get(`http://musicall.leanapp.cn/api/searchalbum/netease?key=${searchkey}&page=1`)
       .then(res => {
         commit(type.GET_NETEASE_ALBUMS, res.data)
+        state.loading = false
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err)
+        state.loading = false
+      })
     axios.get(`http://musicall.leanapp.cn/api/searchalbum/xiami?key=${searchkey}&page=1`)
       .then(res => {
         commit(type.GET_XIAMI_ALBUMS, res.data)

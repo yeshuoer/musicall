@@ -12,6 +12,7 @@ import AlbumResult from './components/SearchResult/AlbumResult.vue'
 import SheetResult from './components/SearchResult/SheetResult.vue'
 import AlbumDetail from './components/SearchResult/AlbumDetail.vue'
 import SheetDetail from './components/SearchResult/SheetDetail.vue'
+import Loading from './components/Loading.vue'
 
 import './assets/bootstrap.css'
 

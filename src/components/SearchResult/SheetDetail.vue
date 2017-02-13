@@ -44,11 +44,6 @@ import {
 } from 'vuex'
 
 export default {
-  data() {
-    return {
-      sheetSource: this.$store.state.sheetdetail.source
-    }
-  },
   computed: {
     author() {
       return this.$store.state.sheetdetail.sheet_detail.author.name
@@ -74,6 +69,9 @@ export default {
           return 'QQ 音乐'
           break;
       }
+    },
+    sheetSource(){
+      return this.$store.state.sheetdetail.source
     },
     sourceColor() {
       switch (this.$store.state.sheetdetail.source) {

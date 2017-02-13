@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="row">
-      <!-- 左侧音乐按钮 -->
+      <!-- 操作按钮 -->
       <div class="musicButton">
         <MusicButton></MusicButton>
       </div>

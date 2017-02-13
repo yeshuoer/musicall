@@ -44,11 +44,6 @@ import {
 } from 'vuex'
 
 export default {
-  data() {
-    return {
-      albumSource: this.$store.state.albumdetail.source
-    }
-  },
   computed: {
     artist() {
       return this.$store.state.albumdetail.album_detail.artist.name
@@ -74,6 +69,9 @@ export default {
           return 'QQ 音乐'
           break;
       }
+    },
+    albumSource(){
+      return this.$store.state.albumdetail.source
     },
     sourceColor() {
       switch (this.$store.state.albumdetail.source) {
