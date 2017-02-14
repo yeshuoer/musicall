@@ -29,7 +29,9 @@
             <td>{{song.artists[0].name}}</td>
             <td>{{song.needPay?'收费':'免费'}}</td>
             <td>
-              <span @click="plusSong(song.name,song.id)" class="glyphicon glyphicon-plus"></span>
+              <a class="btn" :style="{color:sourceColor}">
+                <span @click="plusSong(song.artists[0].name,song.name,song.id)" class="glyphicon glyphicon-plus"></span>
+              </a>
             </td>
           </tr>
         </tbody>
@@ -88,9 +90,10 @@ export default {
     }
   },
   methods: {
-    plusSong(name, id) {
+    plusSong(singer,name, id) {
       this.$store.dispatch('plussong', {
         source: this.albumSource,
+        singer,
         name,
         id
       })
@@ -100,10 +103,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+td a {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .panel-heading {
     span {
         color: white;
     }
+}
+.glyphicon-plus:hover {
+    cursor: pointer;
 }
 .media {
     padding-bottom: 40px;

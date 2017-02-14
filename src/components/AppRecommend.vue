@@ -22,8 +22,8 @@
           </a>
         </div>
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-          <a @click="albumDetail('18903','netease')" class="thumbnail">
-            <img src="https://p3.music.126.net/P1goeQ7SoxEkFsb4ZDijMw==/7746059418324672.jpg" alt="...">
+          <a @click="albumDetail('003DFRzD192KKD','qq')" class="thumbnail">
+            <img src="https://y.gtimg.cn/music/photo_new/T002R300x300M000003DFRzD192KKD.jpg" alt="...">
             <div class="caption">
               <p class="text-center">七里香</p>
             </div>

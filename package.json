@@ -10,6 +10,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "axios": "^0.15.3",
     "buzz": "^1.2.0",
     "howler": "^2.0.2",

@@ -1,28 +1,30 @@
 <template lang="html">
   <div class="playlist">
     <div class="triangle-up"></div>
-    <div class="buttons">
-      <a class="btn">
-        <span @click="playSong" class="glyphicon glyphicon-play"></span>
-      </a>
-      <a class="btn">
-        <span @click="pauseSong" class="glyphicon glyphicon-pause"></span>
-      </a>
-      <a class="btn" @click="next">下一首</a>
-    </div>
     <table class="table">
       <thead>
         <tr>
-          <th></th>
-          <th>歌曲</th>
-          <th>删除</th>
+          <th class="icon-th"></th>
+          <th>音乐列表</th>
+          <th class="icon-th"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="song in list" >
-          <td><span v-if="song.isplaying" class="glyphicon glyphicon-volume-up"></span></td>
-          <td @click="playSelf(song)"><span class="song-name">{{song.name}}</span></td>
-          <td>
+          <td align="right">
+            <span v-if="song.state==='playing'?true:false" class="glyphicon glyphicon-volume-up"></span>
+            <span v-if="song.state==='paused'?true:false" class="glyphicon glyphicon-volume-down"></span>
+          </td>
+          <td class="song-name">
+            <span>{{song.name}}</span> - <span>{{song.singer}}</span>
+          </td>
+          <td class="buttons">
+            <a @click='playSong(song)' class="btn">
+              <span class="glyphicon glyphicon-play"></span>
+            </a>
+            <a @click='pauseSong(song)' class="btn">
+              <span class="glyphicon glyphicon-pause"></span>
+            </a>
             <a @click='removeSong(song)' class="btn">
               <span class="glyphicon glyphicon-remove"></span>
             </a>
@@ -34,13 +36,10 @@
 </template>
 
 <script>
-import * as buzz from 'buzz'
-
 export default {
   data() {
     return {
-      duration: 1000,
-      current: 0
+      toogle: false
     }
   },
   computed: {
@@ -49,79 +48,20 @@ export default {
     }
   },
   methods: {
-    playSelf(song) {
-      for (var i = 0; i < this.list.length; i++) {
-        if (this.list[i].sound) {
-          if (this.list[i].sound.isPaused()) {
-            this.list[i].sound.stop()
-          }
-        }
-      }
-      for (var i = 0; i < this.list.length; i++) {
-        if (this.list[i].isplaying) {
-          this.list[i].isplaying = false
-          this.list[i].sound.stop()
-          break
-        }
-      }
-      song.sound = new buzz.sound(song.url)
-      song.sound.bind("playing", function() {
-        setInterval(function() {
-          this.current = song.sound.getTime()
-        }, 1000)
+    playSong(song) {
+      this.$store.dispatch('playsong', {
+        song
       })
-      song.sound.play()
-      song.isplaying = true
     },
-    playSong() {
-      for (var i = 0; i < this.list.length; i++) {
-        if (this.list[i].sound) {
-          if (this.list[i].sound.isPaused()) {
-            this.list[i].isplaying = true
-            this.list[i].sound.play()
-          }
-        }
-      }
-    },
-    pauseSong() {
-      for (var i = 0; i < this.list.length; i++) {
-        if (this.list[i].isplaying) {
-          this.list[i].isplaying = false
-          this.list[i].sound.pause()
-          break
-        }
-      }
-    },
-    next() {
-      if (this.list[this.list.length - 1].isplaying) {
-        this.list[this.list.length - 1].isplaying = false
-        this.list[this.list.length - 1].sound.stop()
-        this.list[0].isplaying = true
-        this.list[0].sound = new buzz.sound(this.list[0].url)
-        this.list[0].sound.play()
-      } else {
-        for (var i = 0; i < this.list.length - 1; i++) {
-          if (this.list[i].isplaying) {
-            this.list[i].isplaying = false
-            this.list[i].sound.stop()
-            this.list[i + 1].isplaying = true
-            this.list[i + 1].sound = new buzz.sound(this.list[i + 1].url)
-            this.list[i + 1].sound.play()
-            break
-          }
-        }
-      }
+    pauseSong(song) {
+      this.$store.dispatch('pausesong', {
+        song
+      })
     },
     removeSong(song) {
-      for (var i = 0; i < this.list.length; i++) {
-        if (this.list[i].isplaying) {
-          this.list[i].isplaying = false
-          this.list[i].sound.stop()
-          break
-        }
-      }
-      let k = this.list.indexOf(song)
-      this.list.splice(k, 1)
+      this.$store.dispatch('removesong', {
+        song
+      })
     }
   }
 }
@@ -137,8 +77,14 @@ export default {
     .table {
         background-color: salmon;
         color: white;
+        .icon-th {
+            width: 20px;
+        }
         td {
             vertical-align: baseline;
+        }
+        td.buttons {
+            display: flex;
         }
         a.btn {
             color: white;
@@ -148,20 +94,10 @@ export default {
         }
     }
 }
-.buttons {
-    background-color: salmon;
-    display: flex;
-    padding: 20px;
-    justify-content: space-around;
-    a {
-        background-color: white;
-        color: salmon;
-    }
-}
-.song-name:hover {
-    cursor: pointer;
-    color: pink;
-}
+// .song-name:hover {
+//     cursor: pointer;
+//     color: pink;
+// }
 .triangle-up {
     margin-left: 20px;
     width: 0;

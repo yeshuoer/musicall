@@ -53,8 +53,9 @@ export default {
 
 <style lang="scss" scoped>
 .panel-heading{
-  a{
-    color: white;
+  a.btn{
+    background-color: white;
+    color: black;
   }
 }
 .pager {

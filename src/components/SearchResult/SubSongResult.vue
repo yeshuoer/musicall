@@ -8,7 +8,7 @@
             <th>专辑</th>
             <th>歌手</th>
             <th>类型</th>
-            <th>添加</th>
+            <th>添加歌曲</th>
           </tr>
         </thead>
         <tbody>
@@ -18,7 +18,9 @@
             <td>{{song.artists[0].name}}</td>
             <td>{{song.needPay?'收费':'免费'}}</td>
             <td>
-              <span @click="plusSong(source,song.name,song.id)" class="glyphicon glyphicon-plus"></span>
+              <a class="btn" :style="{color:color}">
+                <span @click="plusSong(source,song.name,song.artists[0].name,song.id)" class="glyphicon glyphicon-plus"></span>
+              </a>
             </td>
           </tr>
         </tbody>
@@ -85,9 +87,10 @@ export default {
           page: this.page
         })
     },
-    plusSong(source, name, id) {
+    plusSong(source, name, singer, id) {
       this.$store.dispatch('plussong', {
         source,
+        singer,
         name,
         id
       })
@@ -97,10 +100,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+td a {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .pager {
     margin-top: 0;
     padding-top: 0;
 }
+.glyphicon-headphones,
 .glyphicon-plus:hover {
     cursor: pointer;
 }
