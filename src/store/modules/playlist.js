@@ -61,10 +61,8 @@ const mutations = {
   },
   [type.PAUSE_SONG](state, song) {
     if (song.state === 'playing') {
-      song.state === 'paused'
+      song.state = 'paused'
       song.sound.pause()
-    } else if (song.state === 'paused' || song.state === 'stoped') {
-      return false
     }
   },
   [type.REMOVE_SONG](state, song) {
