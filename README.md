@@ -1,18 +1,18 @@
-# musicall-fe
+# MusicAll
 
-> A Vue.js project
+> 在线音乐网站，音乐源为网易云音乐、虾米音乐、QQ 音乐，解决了因曲库不全而辗转于各大音乐平台的问题，方便听歌
 
-## Build Setup
+## 功能
 
-``` bash
-# install dependencies
-npm install
+- 响应式网站，手机端和 PC 端均可使用（暂不支持 IE）
+- 音乐源为网易云音乐、虾米音乐、QQ 音乐，基本都能找到
+-
 
-# serve with hot reload at localhost:8080
-npm run dev
+## 技术
+- 前端主要采用 Vue.js 框架，及 Vuex、Vue-Router、Axios，CSS 库采用 Bootstrap
+- 后端采用 Nodejs 和 Express 提供 RESTFUL 接口，搭建 http 静态服务器
 
-# build for production with minification
-npm run build
-```
+## 说明
+本项目纯属个人学习之用，若有侵权请告知以删除
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[点此进入网站](musicall.leanapp.cn)

@@ -1,11 +1,11 @@
 <template lang="html">
     <div class="row">
-      <!-- 左侧音乐按钮 -->
-      <div class="musicButton col-xs-4 col-sm-1 col-xs-offset-4 col-sm-offset-0">
+      <!-- 操作按钮 -->
+      <div class="musicButton">
         <MusicButton></MusicButton>
       </div>
       <!-- 搜索功能 -->
-      <div class="searchForm col-xs-12 col-sm-11">
+      <div class="searchForm">
         <SearchForm></SearchForm>
       </div>
     </div>

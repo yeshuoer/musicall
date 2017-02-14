@@ -1,61 +1,61 @@
 <template lang="html">
-  <div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        网易云音乐
+  <div class="album-result">
+    <div class="panel panel-default" :style="{color:currentColor}">
+      <div class="panel-heading" :style="{backgroundColor:currentColor}">
+        <a class="btn" @click="showNetease">网易云音乐</a>
+        <a class="btn" @click="showXiami">虾米音乐</a>
+        <a class="btn" @click="showQQ">QQ 音乐</a>
       </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" v-for="album in neteaseAlbums">
-            <a href="#" class="thumbnail">
-              <img :src="album.cover">
-              <div class="caption">
-                <p class="text-center">{{album.name}}</p>
-                <p class="text-center">{{album.artist.name}}</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="text-center">
-        <ul class="pager">
-         <li><a><span class="glyphicon glyphicon-arrow-left"></span> 上一页</a></li>
-         <li><a>下一页 <span class="glyphicon glyphicon-arrow-right"></span></a></li>
-       </ul>
-      </div>
+      <SubAlbumResult v-show="neteaseShow" source="netease" :color="currentColor"></SubAlbumResult>
+      <SubAlbumResult v-show="xiamiShow" source="xiami" :color="currentColor"></SubAlbumResult>
+      <SubAlbumResult v-show="qqShow" source="qq" :color="currentColor"></SubAlbumResult>
     </div>
   </div>
 </template>
 
 <script>
-import {
-  mapState,
-  mapGetters
-} from 'vuex'
+import SubAlbumResult from './SubAlbumResult.vue'
 
 export default {
-  computed: mapGetters([
-    'neteaseAlbums','xiamiAlbums','qqAlbums'
-  ])
+  data() {
+    return {
+      currentColor: 'crimson',
+      neteaseShow: true,
+      xiamiShow: false,
+      qqShow: false
+    }
+  },
+  components: {
+    SubAlbumResult
+  },
+  methods: {
+    showNetease() {
+      this.neteaseShow = true
+      this.xiamiShow = false
+      this.qqShow = false
+      this.currentColor = 'crimson'
+    },
+    showXiami() {
+      this.xiamiShow = true
+      this.neteaseShow = false
+      this.qqShow = false
+      this.currentColor = 'darkorange'
+    },
+    showQQ() {
+      this.qqShow = true
+      this.neteaseShow = false
+      this.xiamiShow = false
+      this.currentColor = 'mediumseagreen'
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.row{
-  height: auto;
-}
-p.text-center{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow:ellipsis;
-}
-.col-xs-6{
-  img{
-    height: 140px;
-  }
-}
-.pager {
-    margin-top: 0;
-    padding-top: 0;
+.panel-heading {
+    a.btn {
+      background-color: white;
+        color: black;
+    }
 }
 </style>
