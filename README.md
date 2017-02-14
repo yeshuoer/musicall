@@ -6,7 +6,6 @@
 
 - 响应式网站，手机端和 PC 端均可使用（暂不支持 IE）
 - 音乐源为网易云音乐、虾米音乐、QQ 音乐，基本都能找到
--
 
 ## 技术
 - 前端主要采用 Vue.js 框架，及 Vuex、Vue-Router、Axios，CSS 库采用 Bootstrap
