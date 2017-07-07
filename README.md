@@ -9,9 +9,9 @@
 
 ## 技术
 - 前端主要采用 Vue.js 框架，及 Vuex、Vue-Router、Axios，CSS 库采用 Bootstrap
-- 后端采用 Nodejs 和 Express 提供 RESTFUL 接口，搭建 http 静态服务器
+- 后端采用 Nodejs 和 Express 提供 RESTFUL 接口
 
 ## 说明
 本项目纯属个人学习之用，若有侵权请告知以删除
 
-[点此进入网站](musicall.leanapp.cn)
+[点此进入网站](http://musicall.leanapp.cn)
